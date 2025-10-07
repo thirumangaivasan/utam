@@ -25,8 +25,7 @@ jobs:
       - name: Build UTAM
         run: npm run build:utam
  
-
-        name: Fix import path in login.steps.js
+      - name: Fix import path in login.steps.js
         run: |
           if [ -d "pageObjects" ]; then
             echo "PageObjects folder found. Updating import path..."
