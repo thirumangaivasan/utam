@@ -12,9 +12,12 @@ jobs:
     steps:
       - name: Install dependencies
         run: npm install
+        working-directory: ./utam
 
       - name: Build UTAM
         run: npm run build:utam
+        working-directory: ./utam
 
       - name: Run UTAM tests
         run: npm run wdio -- --spec ./src/test/features/testcheck.feature
+        working-directory: ./utam
