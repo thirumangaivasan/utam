@@ -1,0 +1,12 @@
+
+# Node modules
+node_modules/
+
+
+# Dependency directories
+package-lock.json
+
+# pageobjects
+pageObjects/
+
+utam-lint.sarif
