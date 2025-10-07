@@ -37,3 +37,18 @@ jobs:
 
       - name: Run UTAM tests
         run: npm run wdio -- --spec ./src/test/features/testcheck.feature
+
+      - name: Upload screenshots
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-screenshots
+          path: screenshots/
+        
+      - name: Upload Cucumber HTML Report
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: cucumber-html-report
+          path: .tmp/html/
+
