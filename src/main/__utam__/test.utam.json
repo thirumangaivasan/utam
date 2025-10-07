@@ -1,0 +1,180 @@
+{
+    "root": true,
+    "selector": {
+        "css": "html"
+    },
+    "elements": [
+        {
+            "public": true,
+            "name": "guide",
+            "type": "clickable",
+            "selector": {
+                "css": "//a[text()='Guide']"
+            }
+        },
+        {
+            "public": true,
+            "name": "formFields",
+            "type": "clickable",
+            "selector": {
+                "css": "//a[text()='Form Fields']"
+            }
+        },
+        {
+            "public": true,
+            "name": "name",
+            "type": "editable",
+            "selector": {
+                "css": "//input[@name='name-input']"
+            }
+        },
+        {
+            "public": true,
+            "name": "favDrink",
+            "type": "clickable",
+            "selector": {
+                "css": "//input[@name='fav_drink']",
+                "returnAll": true
+            }
+        },
+        {
+            "public": true,
+            "name": "favColor",
+            "type": "clickable",
+            "selector": {
+                "css": "//input[@name='fav_color']",
+                "returnAll": true
+            }
+        },
+        {
+            "public": true,
+            "name": "dropDownTest",
+            "type": "clickable",
+            "selector": {
+                "css": "//select[@name='automation']/option",
+                "returnAll": true
+            }
+        },
+        {
+            "public": true,
+            "name": "email",
+            "type": "editable",
+            "selector": {
+                "css": "//input[@name='email']"
+            }
+        },
+        {
+            "public": true,
+            "name": "submit",
+            "type": "clickable",
+            "selector": {
+                "css": "//button[text()='Submit']"
+            }
+        },
+        {
+            "public": true,
+            "name": "message",
+            "type": "editable",
+            "selector": {
+                "css": "//textarea[@name='message']"
+            }
+        },
+        {
+            "public": true,
+            "name": "alertPopup",
+            "type": "clickable",
+            "selector": {
+                "css": "//b[text()='Alert Popup']"
+            }
+        },
+        {
+            "public": true,
+            "name": "alertButton",
+            "type": "clickable",
+            "selector": {
+                "css": "//button[@id='alert']"
+            }
+        },
+        {
+            "public": true,
+            "name": "confirmPopup",
+            "type": "clickable",
+            "selector": {
+                "css": "//b[text()='Confirm Popup']"
+            }
+        },
+        {
+            "public": true,
+            "name": "firstName",
+            "type": "editable",
+            "selector": {
+                "css": "//input[@id='firstName']"
+            }
+        },
+        {
+            "public": true,
+            "name": "clear",
+            "type": "clickable",
+            "selector": {
+                "css": "//button[@id='clear']"
+            }
+        },
+        {
+            "public": true,
+            "name": "lastName",
+            "type": "editable",
+            "selector": {
+                "css": "//input[@id='lastName']"
+            }
+        },
+        {
+            "public": true,
+            "name": "newWindow",
+            "type": "clickable",
+            "selector": {
+                "css": "//b[text()='New Window']"
+            }
+        },
+        {
+            "name": "tutorialLink",
+            "public": true,
+            "type": "clickable",
+            "selector": {
+                "css": "a[href='https://automatenow.io/git-tutorials/']"
+            }
+        },
+        {
+            "public": true,
+            "name": "searchToggle",
+            "type": "clickable",
+            "selector": {
+                "css": "//button[@id='search_toggle']"
+            }
+        },
+        {
+            "public": true,
+            "name": "frameone",
+            "type": "frame",
+            "selector": {
+                "css": "//iframe[@name='top-iframe']"
+            }
+        },
+        {
+            "public": true,
+            "name": "started",
+            "type": "clickable",
+            "selector": {
+                "css": "//a[@class='getStarted_Sjon']"
+            }
+        },
+        {
+            "public": true,
+            "name": "searchButton",
+            "type": "editable",
+            "selector": {
+                "css": "//button[@class='DocSearch DocSearch-Button']",
+                "returnAll": true
+            }
+        }
+    ]
+}
