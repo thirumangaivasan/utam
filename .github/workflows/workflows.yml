@@ -24,6 +24,17 @@ jobs:
 
       - name: Build UTAM
         run: npm run build:utam
+ 
+
+        name: Fix import path in login.steps.js
+        run: |
+          if [ -d "pageObjects" ]; then
+            echo "PageObjects folder found. Updating import path..."
+            sed -i 's|require(.*pageobjects/test.*)|require("../../../pageObjects/test")|g' src/test/step-defnitions/login.steps.js
+          else
+            echo "PageObjects folder not found!"
+            exit 1
+          fi
 
       - name: Run UTAM tests
         run: npm run wdio -- --spec ./src/test/features/testcheck.feature
