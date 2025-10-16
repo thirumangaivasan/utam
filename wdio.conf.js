@@ -143,7 +143,10 @@ exports.config = {
     // see also: https://webdriver.io/docs/dot-reporter
     reporters: [
         ['spec', { showPreface: false, addConsoleLogs: 'true' }],
-        'cucumberjs-json',
+       ['cucumberjs-json', {
+    jsonFolder: './tmp/json',
+    language: 'en',
+  }]
         //         ['wdio-cucumber-html-reporter', {
         //     jsonFolder: './reports/json/',
         //     reportFolder: './reports/html/',
@@ -183,13 +186,13 @@ exports.config = {
     onPrepare: function () {
         // Remove the screenshots folder before the test run
         removeSync('./screenshots');
-        removeSync('.tmp/');
+        removeSync('./tmp');
     },
 
     onComplete: (exitCode, config, capabilities, results) => {
         generate({
-            jsonDir: '.tmp/json/',
-            reportPath: '.tmp/html/',
+            jsonDir: './tmp/json/',
+            reportPath: './tmp/html/',
             displayDuration: true,
             durationInMS: true,
         });

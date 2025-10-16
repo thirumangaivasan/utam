@@ -1,6 +1,7 @@
 Feature: check
 
 Scenario: Demo Test
+Given get the data file "check"
 Given get the url
 When I test fields radio buttons dropdowns
 

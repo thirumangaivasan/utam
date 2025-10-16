@@ -2,10 +2,35 @@
 const {Given, When, Then} = require('@wdio/cucumber-framework');
 const assert = require('assert');
 const field = require('../../../pageobjects/test');
+const { customData } = require('../../../config/customData');
+const path = require('path');
+const fs = require('fs');
 const { selectDropdownOption, takeScreenshot, handleAlert , switchToNextWindow, checkWindowTitle} = require('../../../utils/common');
 
+
+
+Given(/^get the data file "([^"]+)"$/, async function (fileName) {
+     const fullFileName = `${fileName}.json`; // append .json
+  const filePath = path.resolve(__dirname, '../../../input-data', fullFileName); // adjust path as needed
+  if (fs.existsSync(filePath)) {
+    const data = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+    
+   if (Array.isArray(data)) {
+      Object.assign(customData, data[0]);
+    } else {
+      Object.assign(customData, data);
+    }
+
+  //  Object.assign(customData, data); // populate the shared object
+    console.log('Loaded custom data:', customData);
+  } else {
+    throw new Error(`Data file not found: ${filePath}`);
+  }
+});
+
 Given('get the url', async () => {  
-    await browser.url('https://practice-automation.com/form-fields/');
+     await browser.url(customData.url);
+   // await browser.url('https://practice-automation.com/form-fields/');
     const title = await browser.getTitle();
     console.log('Title is: ' + title);
   //  assert.strictEqual(title, 'Learn and Practice Automation | automateNow');
@@ -172,14 +197,28 @@ When('I test frames', async () => {
 
     const frameSection = await utam.load(field); 
     console.log('Loaded frames page');
-    const frame1 = await frameSection.getFrameone();
+    //const frame1 = await frameSection.getFrameone();
+        const frame1 = await frameSection.getFrameplaywright();
+        //await browser.switchFrame(frame1)
+        await frame1.element.scrollIntoView({ block: 'center'})
     await utam.enterFrame(frame1);
-    console.log('Entered into frame 1');
-     const frameSection1 = await utam.load(field); 
-     
-    const search = await frameSection1.getSearchButton();
+     await new Promise(resolve => setTimeout(resolve, 10000));
+   console.log('Entered into frame 1');
+// const getStartedLink = await $('a[href="/docs/intro"]'); // or a more specific selector
+// const isVisible = await getStartedLink.isDisplayed();
+// console.log('Get Started link is visible:', isVisible)
+//const frameSection1 = await utam.load(field); 
+console.log("after load")
+const pwsee = await frameSection.getPw()
+console.log("after second get")
+await pwsee.isVisible()
+const r = pwsee.getText()
+console.log("r=",r)
+
+
+    const search = await frameSection.getNodechevron();
     console.log('Got get started link in frame 1');
-    await search[1].click();
+   await search.click();
     console.log('Clicked on get started link in frame 1');
     await takeScreenshot('frame1.png');
     console.log('Took screenshot of frame 1');

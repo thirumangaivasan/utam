@@ -159,6 +159,14 @@
                 "css": "//iframe[@name='top-iframe']"
             }
         },
+          {
+            "public": true,
+            "name": "frameplaywright",
+            "type": "frame",
+            "selector": {
+                "css": "//iframe[@title='Playwright']"
+            }
+        },
         {
             "public": true,
             "name": "started",
@@ -174,6 +182,22 @@
             "selector": {
                 "css": "//button[@class='DocSearch DocSearch-Button']",
                 "returnAll": true
+            }
+        },
+         {
+            "public": true,
+            "name": "nodechevron",
+            "type": "clickable",
+            "selector": {
+                "css": "//a[@class='navbar__link']"
+            }
+        },
+         {
+            "public": true,
+            "name": "pw",
+            "type": "clickable",
+            "selector": {
+                "css": "//b[text()='Playwright']"
             }
         }
     ]
