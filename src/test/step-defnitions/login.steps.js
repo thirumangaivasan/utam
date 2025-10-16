@@ -36,7 +36,7 @@ Given('get the url', async () => {
   //  assert.strictEqual(title, 'Learn and Practice Automation | automateNow');
     //need to add hard wait
     await new Promise(resolve => setTimeout(resolve, 15000));
-console.log('waited for 10 seconds');
+console.log('waited for 15 seconds');
 
 });
 
